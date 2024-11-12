@@ -23,9 +23,9 @@
               <img src="images/man.jpg" alt="User 1">
               <p>W 先生</p>
             </div>
-            <div class="heart">
-              <span class="heart-icon">❤️</span>
-            </div>
+	<div class="heart static-heart">
+	  <span class="heart-icon">❤️</span>
+	</div>
             <div class="avatar">
               <img src="images/woman.jpg" alt="User 2">
               <p>Z 女士</p>
@@ -131,6 +131,35 @@ images.forEach(image => {
 overlay.addEventListener('click', () => {
   overlay.style.display = 'none';  // 隐藏遮罩层
 });
+
+//心
+const colors = [
+  "#FF6B6B", "#FF8E72", "#FFB6C1", "#FFD700", "#FF69B4", // 原有颜色
+  "#FF4500", "#DA70D6", "#7FFF00", "#00CED1", "#1E90FF", // 新增鲜艳色
+  "#9400D3", "#00FA9A", "#FF6347", "#40E0D0", "#FF1493", // 新增亮色
+  "#8A2BE2", "#5F9EA0", "#FF7F50", "#FF00FF", "#FF4500", // 新增多彩色
+  "#FFDAB9", "#E6E6FA", "#FFFACD", "#F08080", "#ADFF2F"  // 新增柔和色
+];
+const numHearts = 10; // 心的数量
+
+for (let i = 0; i < numHearts; i++) {
+  const heart = document.createElement('div');
+  heart.classList.add('heart', 'floating-heart'); // 添加 floating-heart 类
+  
+  // 随机大小、颜色、位置
+  heart.style.width = `${Math.random() * 20 + 15}px`; // 心的大小
+  heart.style.height = heart.style.width;
+  heart.style.left = `${Math.random() * 100}vw`;
+  heart.style.animationDuration = `${Math.random() * 5 + 10}s`; // 动画时长
+  heart.style.backgroundColor = colors[Math.floor(Math.random() * colors.length)]; // 随机颜色
+  
+  document.body.appendChild(heart);
+}
+
+
+
   </script>
+  
+  
 </body>
 </html>
