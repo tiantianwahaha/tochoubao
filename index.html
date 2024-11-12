@@ -1,0 +1,136 @@
+﻿<!DOCTYPE html>
+<html lang="zh">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>To Choubao</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <!-- header-wrap -->
+    <div class="header-wrap">
+      <div class="site-name">To choubao</div>
+      <div class="poetry">喜欢花 喜欢海 喜欢日落 更喜欢你 ~</div>
+    </div>
+
+    <!-- 页头 -->
+    <header>
+      <div class="header-bg">
+        <div class="header-content">
+          <div class="user-info">
+            <div class="avatar">
+              <img src="images/man.jpg" alt="User 1">
+              <p>W 先生</p>
+            </div>
+            <div class="heart">
+              <span class="heart-icon">❤️</span>
+            </div>
+            <div class="avatar">
+              <img src="images/woman.jpg" alt="User 2">
+              <p>Z 女士</p>
+            </div>
+          </div>
+
+          <!-- 计时器 -->
+          <div id="timer">
+            <span id="days">00</span>天
+            <span id="hours">00</span>小时
+            <span id="minutes">00</span>分钟
+            <span id="seconds">00</span>秒
+          </div>
+        </div>
+      </div>
+    </header>
+
+    <!-- 图片展示区 -->
+    <section class="image-gallery">
+      <div class="image-item">
+        <img src="images/制霸中国.png" alt="Love Image 1" class="image">
+        <p class="date">Date：2024-11-11</p>
+        <hr>
+        <p>还有好多地方没有旅行</p>
+      </div>
+      <div class="image-item">
+        <img src="images/duku.jpg" alt="Love Image 2" class="image">
+        <p class="date">Date：2024-09-12</p>
+        <hr>
+        <p>甜蜜新疆独库公路之旅</p>
+      </div>
+      <div class="image-item">
+        <img src="images/mangshan.jpg" alt="Love Image 4" class="image">
+        <p class="date">Date：2022-09-10</p>
+        <hr>
+        <p>和小Z一起爬蟒山看日落</p>
+      </div>
+      <div class="image-item">
+        <img src="images/taoci.jpg" alt="Love Image 3" class="image">
+        <p class="date">Date：2022-07-31</p>
+        <hr>
+        <p>一起去做手工陶瓷</p>
+      </div>
+      <div class="image-item">
+        <img src="https://via.placeholder.com/300x200?text=image" alt="Love Image 5" class="image">
+        <p class="date">Date：2024-11-12</p>
+        <hr>
+        <p>下一站</p>
+      </div>
+    </section>
+
+    <!-- 页脚 -->
+    <footer>
+      <p>&copy; 2024 To Choubao. All rights reserved.</p>
+    </footer>
+  </div>
+
+  <!-- 放大查看的遮罩层 -->
+<div id="overlay" class="overlay">
+  <div class="overlay-content">
+    <img id="overlay-img" src="" alt="放大查看">
+    <button id="close-overlay" class="close-overlay">关闭</button>
+  </div>
+</div>
+
+  <script>
+    // 设置开始时间
+    const startDate = new Date("2022-08-03T22:30:00");
+
+function updateTimer() {
+  const now = new Date();
+  const diff = now - startDate;
+
+  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+  document.getElementById("days").textContent = days.toString().padStart(2, "0");
+  document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
+  document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
+  document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
+
+  requestAnimationFrame(updateTimer); // 使用 requestAnimationFrame 更平滑地更新
+}
+
+requestAnimationFrame(updateTimer); // 启动动画帧更新
+
+
+// 图片点击事件：放大查看
+const images = document.querySelectorAll('.image');
+const overlay = document.getElementById('overlay');
+const overlayImg = document.getElementById('overlay-img');
+
+images.forEach(image => {
+  image.addEventListener('click', () => {
+    overlay.style.display = 'flex';  // 显示遮罩层
+    overlayImg.src = image.src;     // 设置遮罩层中的图片为点击的图片
+  });
+});
+
+// 点击遮罩层关闭放大查看
+overlay.addEventListener('click', () => {
+  overlay.style.display = 'none';  // 隐藏遮罩层
+});
+  </script>
+</body>
+</html>
