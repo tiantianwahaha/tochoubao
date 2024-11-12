@@ -98,6 +98,15 @@ header {
   color: white;
 }
 
+.heart {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 36px;
+  animation: heartbeat 1.5s infinite;
+  margin: 0 30px;
+}
+
 #timer {
   margin-top: 20px;
   font-size: 24px;
@@ -224,65 +233,4 @@ footer {
   .image-gallery {
     grid-template-columns: 1fr; /* 单列布局 */
   }
-}
-
-
-/* 通用心形样式 */
-.heart {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-/* 漂浮的背景心形 */
-.heart.floating-heart {
-  position: absolute;
-  bottom: -50px;
-  width: 10px;
-  height: 10px;
-  background-color: transparent;
-  animation: rise 20s infinite ease-in;
-  transform: rotate(45deg);
-}
-
-.floating-heart::before,
-.floating-heart::after {
-  content: "";
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  background-color: inherit;
-  border-radius: 50%;
-}
-
-.floating-heart::before {
-  top: -50%;
-  left: 0;
-}
-
-.floating-heart::after {
-  top: 0;
-  left: -50%;
-}
-
-@keyframes rise {
-  0% {
-    transform: translateY(0) scale(0.5) rotate(45deg);
-    opacity: 0.5;
-  }
-  50% {
-    transform: translateY(-600px) scale(1) rotate(45deg);
-    opacity: 0.8;
-  }
-  100% {
-    transform: translateY(-1000px) scale(0.5) rotate(45deg);
-    opacity: 0;
-  }
-}
-
-/* 头像中间的心形（静态） */
-.static-heart {
-  font-size: 36px;
-  color: red; /* 设置心形颜色 */
-  animation: none; /* 禁止动画 */
 }
