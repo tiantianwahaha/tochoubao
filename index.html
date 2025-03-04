@@ -1,138 +1,295 @@
 ﻿<!DOCTYPE html>
-<html lang="zh">
+<html lang="zh-CN">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>To Choubao</title>
-  <link rel="stylesheet" href="styles.css">
+<meta charset="utf-8">
+<title>Tongtong</title>
+<link rel="stylesheet" href="css/style.css">
+<link rel="stylesheet" href="css/animate.min.css" />
+<link rel="stylesheet" href="css/jquery.fullPage.css">
+
+<link rel="stylesheet" href="css/font-awesome.css">
+<link rel="stylesheet" href="css/leaflet.css" />
+<link rel="stylesheet" href="js/leaflet.awesome-markers.css"> 
+
+
+<script src="js/jquery.min.js"></script>
+<script src="js/jquery.fullPage.js"></script>
+
+<script src="js/leaflet.js"></script>
+<script src="js/leaflet.awesome-markers.js"></script>
+<script src="js/map.js"></script>
+<script>
+$(function(){
+	$('#dowebok').fullpage({
+		sectionsColor: [ '#FFFAF0','#4BBFC3', '#7BAABE','#00ECB9'],
+		'navigation': true
+	});
+});
+</script>
 </head>
+
+
 <body>
-  <div class="container">
-    <!-- header-wrap -->
-    <div class="header-wrap">
-      <div class="site-name">To CB</div>
-      <div class="poetry">喜欢花 喜欢海 喜欢日落 更喜欢你 ~</div>
+<div id="dowebok">
+<!--第一个section-->
+	<div class="section active">
+		<canvas id='cavs'></canvas>
+		<div style='position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);'>
+		<div id="clockdiv">
+			<h1><strong>@王先森 和 @彤彤</strong></br><strong>的甜蜜时光</strong></h1>
+		  <div>
+			<span class="days" ></span>
+			<div class="smalltext">天</div>
+		  </div>
+		  <div>
+			<span class="hours"></span>
+			<div class="smalltext">小时</div>
+		  </div>
+		  <div>
+			<span class="minutes"></span>
+			<div class="smalltext">分钟</div>
+		  </div>
+		  <div>
+			<span class="seconds"></span>
+			<div class="smalltext">秒</div>
+		  </div>
+		</div>
+		</div>
+	</div>
+	
+	<!--第三个section 地图-->
+	<div class="section">
+		<div id="mapid" style="width: 90%; height: 90%;margin:0 auto"></div>
+	</div>
+	
+	
+<!--第二个section  列表-->
+	<div class="section">
+
+    <div class="container">
+        <header id="list-header">❤️ 年度计划清单 ❤️</header>
+<ul id="task-list">
+    <li><input type="checkbox" id="task1"><span>一起打卡10个博物馆</span></li>
+    <li><input type="checkbox" id="task2"><span>一起学2门外语</span></li>
+    <li><input type="checkbox" id="task3"><span>一起看10部top250的电影</span></li>
+    <li><input type="checkbox" id="task4"><span>一起看10部纪录片</span></li>
+    <li><input type="checkbox" id="task5"><span>一起看完10本非专业书，分享感受</span></li>
+    <li><input type="checkbox" id="task6"><span>互相监督看完专业书10本，分享感受</span></li>
+    <li><input type="checkbox" id="task7"><span>互相监督每周看2篇文献</span></li>
+    <li><input type="checkbox" id="task8"><span>一起学一种乐器</span></li>
+    <li><input type="checkbox" id="task9"><span>一起打羽毛球</span></li>
+    <li><input type="checkbox" id="task10"><span>一起穿情侣装牵手散步</span></li>
+    <li><input type="checkbox" id="task11"><span>一起去游乐园</span></li>
+    <li><input type="checkbox" id="task12"><span>一起坐摩天轮</span></li>
+    <li><input type="checkbox" id="task13"><span>一起坐过山车</span></li>
+    <li><input type="checkbox" id="task14"><span>一起去蹦极</span></li>
+    <li><input type="checkbox" id="task15"><span>一起坐热气球</span></li>
+    <li><input type="checkbox" id="task16"><span>一起划船</span></li>
+    <li><input type="checkbox" id="task17"><span>一起去水族馆/动物园</span></li>
+    <li><input type="checkbox" id="task18" checked><span>一起爬山</span></li>
+    <li><input type="checkbox" id="task19"><span>一起骑自行车</span></li>
+    <li><input type="checkbox" id="task20"><span>一起跑步</span></li>
+    <li><input type="checkbox" id="task21"><span>一起去海边</span></li>
+    <li><input type="checkbox" id="task22"><span>一起看夜景星空</span></li>
+    <li><input type="checkbox" id="task23"><span>一起看日出、日落</span></li>
+    <li><input type="checkbox" id="task24"><span>一起露营住帐篷</span></li>
+    <li><input type="checkbox" id="task25"><span>一起看雪、堆雪人</span></li>
+    <li><input type="checkbox" id="task26"><span>一起回母校</span></li>
+    <li><input type="checkbox" id="task27"><span>一起去鬼屋</span></li>
+    <li><input type="checkbox" id="task28"><span>一起去寺庙祈福/许愿池许愿</span></li>
+    <li><input type="checkbox" id="task29"><span>一起去看花</span></li>
+    <li><input type="checkbox" id="task30"><span>一起坐一次巴士，在没去过的地方下车</span></li>
+    <li><input type="checkbox" id="task31"><span>一起放风筝</span></li>
+    <li><input type="checkbox" id="task32"><span>一起去自驾游</span></li>
+    <li><input type="checkbox" id="task33"><span>一起去吃路边摊</span></li>
+    <li><input type="checkbox" id="task34"><span>一起吃火锅</span></li>
+    <li><input type="checkbox" id="task35"><span>一起吃一个冰淇淋</span></li>
+    <li><input type="checkbox" id="task36"><span>一起和朋友们去吃饭</span></li>
+    <li><input type="checkbox" id="task37"><span>一起逛超市</span></li>
+    <li><input type="checkbox" id="task38"><span>一起做一次蛋糕甜点</span></li>
+    <li><input type="checkbox" id="task39"><span>一起刷碗</span></li>
+    <li><input type="checkbox" id="task40"><span>给对方做便当/早餐</span></li>
+    <li><input type="checkbox" id="task41"><span>一起互喂对方东西</span></li>
+    <li><input type="checkbox" id="task42"><span>一起汗蒸</span></li>
+    <li><input type="checkbox" id="task43"><span>一起泡温泉</span></li>
+    <li><input type="checkbox" id="task44"><span>一起洗澡</span></li>
+    <li><input type="checkbox" id="task45"><span>一起唱歌并且录下来</span></li>
+    <li><input type="checkbox" id="task46"><span>一起过节</span></li>
+    <li><input type="checkbox" id="task47"><span>一起看脱口秀</span></li>
+    <li><input type="checkbox" id="task48"><span>一起打扫卫生</span></li>
+    <li><input type="checkbox" id="task49"><span>教对方一项你的特长</span></li>
+    <li><input type="checkbox" id="task50"><span>给对方系鞋带</span></li>
+    <li><input type="checkbox" id="task51"><span>给对方穿衣服</span></li>
+    <li><input type="checkbox" id="task52"><span>给对方吹头发</span></li>
+    <li><input type="checkbox" id="task53"><span>给对方刮胡子</span></li>
+    <li><input type="checkbox" id="task54"><span>一起给对方化妆、卸妆</span></li>
+    <li><input type="checkbox" id="task55"><span>一起在对方生病陪着对方</span></li>
+    <li><input type="checkbox" id="task56"><span>一起熬夜通宵跨年</span></li>
+    <li><input type="checkbox" id="task57"><span>一起拍视频记录生活</span></li>
+    <li><input type="checkbox" id="task58"><span>一起上下班坐地铁</span></li>
+    <li><input type="checkbox" id="task59"><span>一起种花草</span></li>
+    <li><input type="checkbox" id="task60"><span>一起制作个性化情侣手机壳</span></li>
+    <li><input type="checkbox" id="task61"><span>一起看烟花</span></li>
+    <li><input type="checkbox" id="task62"><span>一起庆祝恋爱纪念日</span></li>
+    <li><input type="checkbox" id="task63"><span>一起跳舞</span></li>
+    <li><input type="checkbox" id="task64" checked><span>一起听音乐</span></li>
+    <li><input type="checkbox" id="task65"><span>一起DIY手工</span></li>
+    <li><input type="checkbox" id="task66"><span>偷偷为对方买喜欢又舍不得的东西</span></li>
+    <li><input type="checkbox" id="task67"><span>一起去挑选一束花</span></li>
+    <li><input type="checkbox" id="task68"><span>一起为对方按摩一次</span></li>
+    <li><input type="checkbox" id="task69"><span>一起敷面膜</span></li>
+    <li><input type="checkbox" id="task70"><span>一起去当义工一天</span></li>
+    <li><input type="checkbox" id="task71"><span>一起做一次公共演讲</span></li>
+    <li><input type="checkbox" id="task72"><span>一起写小自传</span></li>
+    <li><input type="checkbox" id="task73"><span>一起体验书法班</span></li>
+    <li><input type="checkbox" id="task74"><span>一起体验古琴班</span></li>
+    <li><input type="checkbox" id="task75"><span>一起体验画画培训班</span></li>
+</ul>
+
     </div>
 
-    <!-- 页头 -->
-    <header>
-      <div class="header-bg">
-        <div class="header-content">
-          <div class="user-info">
-            <div class="avatar">
-              <img src="images/man.jpg" alt="User 1">
-              <p>W 先生</p>
-            </div>
-	<div class="heart static-heart">
-	  <span class="heart-icon">❤️</span>
 	</div>
-            <div class="avatar">
-              <img src="images/woman.jpg" alt="User 2">
-              <p>Z 女士</p>
-            </div>
-          </div>
 
-          <!-- 计时器 -->
-          <div id="timer">
-            <span id="days">00</span>天
-            <span id="hours">00</span>小时
-            <span id="minutes">00</span>分钟
-            <span id="seconds">00</span>秒
-          </div>
-        </div>
-      </div>
-    </header>
 
-    <!-- 图片展示区 -->
-    <section class="image-gallery">
-      <div class="image-item">
-        <img src="images/制霸中国.png" alt="Love Image 1" class="image">
-        <p class="date">Date：2024-11-11</p>
-        <hr>
-        <p>还有好多地方没有旅行</p>
-      </div>
-      <div class="image-item">
-        <img src="images/duku.jpg" alt="Love Image 2" class="image">
-        <p class="date">Date：2024-09-12</p>
-        <hr>
-        <p>甜蜜新疆独库公路之旅</p>
-      </div>
-      <div class="image-item">
-        <img src="images/mangshan.jpg" alt="Love Image 4" class="image">
-        <p class="date">Date：2022-09-10</p>
-        <hr>
-        <p>和小Z一起爬蟒山看日落</p>
-      </div>
-      <div class="image-item">
-        <img src="images/taoci.jpg" alt="Love Image 3" class="image">
-        <p class="date">Date：2022-07-31</p>
-        <hr>
-        <p>一起去做手工陶瓷</p>
-      </div>
-      <div class="image-item">
-        <img src="https://via.placeholder.com/300x200?text=image" alt="Love Image 5" class="image">
-        <p class="date">Date：2024-11-12</p>
-        <hr>
-        <p>下一站</p>
-      </div>
-    </section>
+	<!--第四个section 蜡烛
+	<div class="section">
 
-    <!-- 页脚 -->
-    <footer>
-      <p>&copy; 2024 To Choubao. All rights reserved.</p>
-    </footer>
-  </div>
+			<div class="velas">
+					<div class="fuego"></div>
+					<div class="fuego"></div>
+					<div class="fuego"></div>
+					<div class="fuego"></div>
+					<div class="fuego"></div>
+			</div>
+			<embed id="cake" src="cake.svg" width="200px" height="500px" type="image/svg+xml"/>
+				<p>Happy 18th birthday!</p>
+            <audio controls="controls" loop="loop" height="100" width="100">
+                <source id="song" src="birthday.mp3" type="audio/mpeg">
+            </audio>
 
-  <!-- 放大查看的遮罩层 -->
-<div id="overlay" class="overlay">
-  <div class="overlay-content">
-    <img id="overlay-img" src="" alt="放大查看">
-    <button id="close-overlay" class="close-overlay">关闭</button>
-  </div>
+	</div>
+	-->
 </div>
 
-  <script>
-    // 设置开始时间
-    const startDate = new Date("2022-08-03T22:30:00");
 
-function updateTimer() {
-  const now = new Date();
-  const diff = now - startDate;
 
-  const days = Math.floor(diff / (1000 * 60 * 60 * 24));
-  const hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
-  const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
-  const seconds = Math.floor((diff % (1000 * 60)) / 1000);
-
-  document.getElementById("days").textContent = days.toString().padStart(2, "0");
-  document.getElementById("hours").textContent = hours.toString().padStart(2, "0");
-  document.getElementById("minutes").textContent = minutes.toString().padStart(2, "0");
-  document.getElementById("seconds").textContent = seconds.toString().padStart(2, "0");
-
-  requestAnimationFrame(updateTimer); // 使用 requestAnimationFrame 更平滑地更新
+<!--时间计数函数-->
+<script>
+function getTimeRemaining(begintime) {
+  var t = Date.parse(new Date()) - Date.parse(begintime);
+  var seconds = Math.floor((t / 1000) % 60);
+  var minutes = Math.floor((t / 1000 / 60) % 60);
+  var hours = Math.floor((t / (1000 * 60 * 60)) % 24);
+  var days = Math.floor(t / (1000 * 60 * 60 * 24));
+  return {
+    'total': t,
+    'days': days,
+    'hours': hours,
+    'minutes': minutes,
+    'seconds': seconds
+  };
 }
 
-requestAnimationFrame(updateTimer); // 启动动画帧更新
+function initializeClock(id, begintime) {
+  var clock = document.getElementById(id);
+  var daysSpan = clock.querySelector('.days');
+  var hoursSpan = clock.querySelector('.hours');
+  var minutesSpan = clock.querySelector('.minutes');
+  var secondsSpan = clock.querySelector('.seconds');
 
+  function updateClock() {
+    var t = getTimeRemaining(begintime);
 
-// 图片点击事件：放大查看
-const images = document.querySelectorAll('.image');
-const overlay = document.getElementById('overlay');
-const overlayImg = document.getElementById('overlay-img');
+    daysSpan.innerHTML = t.days;
+    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
+    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
+    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
+  }
 
-images.forEach(image => {
-  image.addEventListener('click', () => {
-    overlay.style.display = 'flex';  // 显示遮罩层
-    overlayImg.src = image.src;     // 设置遮罩层中的图片为点击的图片
-  });
-});
+  updateClock();
+  var timeinterval = setInterval(updateClock, 1000);
+}
 
-// 点击遮罩层关闭放大查看
-overlay.addEventListener('click', () => {
-  overlay.style.display = 'none';  // 隐藏遮罩层
-});
-  </script>
-  
-  
+var lovetime = new Date("August 3, 2022 22:30:00");
+initializeClock('clockdiv', lovetime);
+</script>
+<!--蛋糕蜡烛动画-->
+<script>
+var canvas = document.getElementById("cavs");
+const WIDTH = window.innerWidth;
+const HEIGHT = window.innerHeight;
+canvas.setAttribute("width", WIDTH);
+canvas.setAttribute("height", HEIGHT);
+var context = canvas.getContext("2d");
+var start =
+{
+    loves: [],
+    DURATION: 30,
+    begin: function()
+    {
+        this.createLove();
+    },
+    createLove: function()
+    {
+        for (var i = 0; i < WIDTH / 59; i++)
+        {
+            var love = new Love();
+            this.loves.push(love);
+        }
+        setInterval(this.drawLove.bind(this), this.DURATION);
+    },
+    drawLove: function()
+    {
+        context.clearRect(0, 0, WIDTH, HEIGHT);
+        for (var key in this.loves)
+        {
+            this.loves[key].draw();
+        }
+    }
+};
+function Love()
+{
+    var me = this;
+    function rand() 
+    {
+        me.maxScale = (Math.random() * 3.2 + 1.2) * WIDTH / 521;
+        me.curScale = 1.2 * WIDTH / 521;
+        me.x = Math.floor(Math.random() * WIDTH - 40);
+        me.y = Math.floor(HEIGHT - Math.random() * 200);
+        me.ColR = Math.floor(Math.random() * 255);
+        me.ColG = Math.floor(Math.random() * 255);
+        me.ColB = Math.floor(Math.random() * 255);
+        me.alpha = Math.random() * 0.2 + 0.8;
+        me.vector = Math.random() * 5 + 0.4;
+    }
+    (function(){rand();} ());
+    me.draw = function()
+    {
+        if (me.alpha < 0.01) rand();
+        if(me.curScale < me.maxScale) me.curScale += 0.3;
+        x = me.x;
+        y = me.y;
+        scale = me.curScale;
+        context.fillStyle = "rgba(" + me.ColR + "," + me.ColG + "," + me.ColB + "," + me.alpha + ")";
+        context.shadowBlur = 10;
+        context.shadowColor = "rgb(" + me.ColR + "," + me.ColG + "," + me.ColB + ")";
+        context.beginPath();
+        context.bezierCurveTo( x + 2.5*scale, y + 2.5*scale, x + 2.0*scale, y, x, y );
+        context.bezierCurveTo( x - 3.0*scale, y, x - 3.0*scale, y + 3.5*scale,x - 3.0*scale,y + 3.5*scale );
+        context.bezierCurveTo( x - 3.0*scale, y + 5.5*scale, x - 1.0*scale, y + 7.7*scale, x + 2.5*scale, y + 9.5*scale );
+        context.bezierCurveTo( x + 6.0*scale, y + 7.7*scale, x + 8.0*scale, y + 5.5*scale, x + 8.0*scale, y + 3.5*scale );
+        context.bezierCurveTo( x + 8.0*scale, y + 3.5*scale, x + 8.0*scale, y, x + 5.0*scale, y );
+        context.bezierCurveTo( x + 3.5*scale, y, x + 2.5*scale, y + 2.5*scale, x + 2.5*scale, y + 2.5*scale );
+        context.fill();
+        context.closePath();
+        me.y -= me.vector;
+        me.alpha -= (me.vector / 2.9 * 3.5 / HEIGHT);
+    }
+}
+start.begin();
+
+</script>
 </body>
+
 </html>
